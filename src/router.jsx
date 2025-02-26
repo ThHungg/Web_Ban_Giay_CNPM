@@ -8,6 +8,7 @@ import Contact from "./page/users/contact";
 import Voucher from "./page/users/voucher";
 import DetailProductPage from "./page/users/detailProductPage";
 import ProductsPage from "./page/users/productsPage";
+import ShoppingCartPage from "./page/users/shoppingCartPage";
 
 const renderUserRouter = () => {
     const userRouter = [
@@ -42,8 +43,13 @@ const renderUserRouter = () => {
             // Ứng với đường dẫn này sẽ trả về componen là Home
         },
         {
-            path: ROUTERS.USER.DETAILPRODUCT,
+            path: `${ROUTERS.USER.DETAILPRODUCT}/:id`,
             component: <DetailProductPage/>
+            // Ứng với đường dẫn này sẽ trả về componen là Home
+        },
+        {
+            path: ROUTERS.USER.SHOPPINGCARTPAGE,
+            component: <ShoppingCartPage/>
             // Ứng với đường dẫn này sẽ trả về componen là Home
         }
     ];

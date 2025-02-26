@@ -6,7 +6,7 @@ const Quantity = ({ hasAddToCart = true }) => {
   return (
     <>
       <div className="space-y-3">
-        <b className="text-2xl">Số lượng:</b>
+        {hasAddToCart && (<b className="text-2xl">Số lượng:</b>)}
         <div className="flex items-center gap-2">
           <span
             className=" bg-white w-10 h-10 flex justify-center items-center rounded-lg border-2 text-red-500 text-3xl cursor-pointer"
@@ -28,25 +28,22 @@ const Quantity = ({ hasAddToCart = true }) => {
             +
           </span>
         </div>
-        <div className="grid grid-rows-2">
-          <button
-            type="submit"
-            className="w-60 h-14 bg-red-500 mt-2 rounded-lg text-xl font-bold"
-          >
-            Mua ngay
-          </button>
-          <button
-            type="submit"
-            className="w-60 h-14 bg-gray-500 mt-2 rounded-lg text-xl font-bold"
-          >
-            Thêm vào giỏ hàng
-          </button>
-        </div>
-        {/* {hasAddToCart && (
-          <button type="submit" className="py-4 px-4 bg-red-500 mt-2 rounded-lg text-xl font-bold">
-            Thêm vào giỏ hàng
-          </button>
-        )} */}
+        {hasAddToCart && (
+          <div className="grid grid-rows-2">
+            <button
+              type="submit"
+              className="w-60 h-14 bg-red-500 mt-2 rounded-lg text-xl font-bold"
+            >
+              Mua ngay
+            </button>
+            <button
+              type="submit"
+              className="w-60 h-14 bg-gray-500 mt-2 rounded-lg text-xl font-bold"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

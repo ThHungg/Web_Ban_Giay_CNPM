@@ -106,7 +106,9 @@ const Header = () => {
           </nav>
           <ul className="flex">
             <li className="mx-4 text-2xl">
-              <FaShoppingCart />
+              <Link to={ROUTERS.USER.SHOPPINGCARTPAGE}>
+                <FaShoppingCart />
+              </Link>
             </li>
             <li className="mx-4 text-2xl">
               <Link to={ROUTERS.USER.PROFILEPAGE}>

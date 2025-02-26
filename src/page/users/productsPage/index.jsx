@@ -3,8 +3,10 @@ import ncat1 from "../../../assets/users/img/newcategories/ncat1.jpg";
 import { ProductCard } from "../../../component";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../utils/router";
-
+import shoesData from "../../../data.json";
 const Products = () => {
+  const shoes = shoesData.shoes;
+
   const brands = ["Adidas", "Nike", "Puma", "Jordan", "Gucci"];
   const sorts = [
     "Giá thấp đến cao",
@@ -171,8 +173,8 @@ const Products = () => {
   ];
   const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(products.length / itemsPerPage);
-  const currenProducts = products.slice(
+  const totalPages = Math.ceil(shoes.length / itemsPerPage);
+  const currenProducts = shoes.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -218,9 +220,8 @@ const Products = () => {
         </div>
 
         <div className="col-span-4">
-          <Link to={ROUTERS.USER.DETAILPRODUCT}>
-            <div className="grid grid-cols-3">
-              {currenProducts.map((item, key) => (
+          <div className="grid grid-cols-3">
+            {/* {currenProducts.map((item, key) => (
                 <div className="" key={key}>
                   <ProductCard
                     name={item.name}
@@ -229,9 +230,20 @@ const Products = () => {
                     oldprice={item.oldprice}
                   />
                 </div>
-              ))}
-            </div>
-          </Link>
+              ))} */}
+            {currenProducts.map((item, key) => (
+              <Link to={`${ROUTERS.USER.DETAILPRODUCT}/${item.id}`} key={key}>
+                <div className="">
+                  <ProductCard
+                    name={item.name}
+                    img={item.img}
+                    price={item.price}
+                    oldprice={item.oldprice}
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
           {/* Pagination */}
           <button
             className="px-4 py-2 mx-2 bg-gray-200 rounded disabled:opacity-50"
