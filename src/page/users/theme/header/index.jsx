@@ -5,8 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import profilePage from "../../profilePage";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-const Header = () => {
+const Header = ({hasAddToBanner = true}) => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -115,9 +114,12 @@ const Header = () => {
                 <FaUser />
               </Link>
             </li>
-            <li className="mx-4 text-2xl">
-              <FaSearch />
-            </li>
+            <Link to={ROUTERS.USER.LOGINPAGE}>
+              <li className="mx-4 text-xl cursor-pointer">
+                {/* <FaSearch /> */}
+                Đăng Nhập
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
@@ -138,7 +140,8 @@ const Header = () => {
           </form>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-auto">
+      {hasAddToBanner && (
+              <div className="max-w-screen-xl mx-auto">
         <Carousel responsive={responsive}>
           <div className="relative mx-auto w-full max-w-screen-xl py-3 h-[416px] ">
             <img
@@ -195,6 +198,7 @@ const Header = () => {
           </div>
         </Carousel>
       </div>
+      )}
     </>
   );
 };

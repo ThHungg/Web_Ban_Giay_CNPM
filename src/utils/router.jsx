@@ -8,6 +8,7 @@ export const ROUTERS = {
         PROFILEPAGE: "/trang-ca-nhan",
         DETAILPRODUCT: "/thong-tin-san-pham",
         SHOPPINGCARTPAGE: "/gio-hang",
+        LOGINPAGE: "dang-nhap",
     }
 }
 

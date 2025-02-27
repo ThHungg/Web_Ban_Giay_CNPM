@@ -68,28 +68,28 @@ const HomePage = () => {
     {
       img: ncat1,
       name: "Nike Air Force 1 Shadow",
-      price: "3.390.000 đ",
-      oldprice: "4.000.000 đ",
+      price: "3390000",
+      oldprice: "4000000",
     },
     {
       img: ncat1,
       name: "2. Nike Air Force 1 Shadow",
-      price: "3.390.000 đ",
-      oldprice: "4.000.000 đ",
+      price: "3390000",
+      oldprice: "4000000",
     },
 
     {
       img: ncat1,
       name: "3. Nike Air Force 1 Shadow",
-      price: "3.390.000 đ",
-      oldprice: "4.000.000 đ",
+      price: "3390000",
+      oldprice: "4000000",
     },
 
     {
       img: ncat1,
       name: "4. Nike Air Force 1 Shadow",
-      price: "3.390.000 đ",
-      oldprice: "4.000.000 đ",
+      price: "3390000",
+      oldprice: "4000000",
     },
   ];
 
